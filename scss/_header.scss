@@ -1,0 +1,187 @@
+@mixin logo-circle($bord) {
+	border: $bord;
+	border-radius: 50%;
+	padding: .25rem;
+	font-size: 1rem;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+@mixin background-img {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: .5rem;
+	text-transform: uppercase;
+}
+
+.header {
+	&-navbar {
+		background-color: $color-navbar;
+		height: 3.7rem;
+		border-bottom: 2px solid lightgray;
+		overflow: hidden;
+		&-container {
+			width: 100%;
+			&-logo {
+				padding: 0;
+				margin: 0;
+			}
+			&-social {
+				&-icon {				
+				display: inline-block;
+					.bi-chat-dots {
+						@include logo-circle(0);
+					}
+					.bi-telephone, .bi-list {
+						@include logo-circle(2px solid #fff);
+					}
+				}
+				&-form {
+					display: inline-block;
+					.btn-login {
+						/* Width, height, bg-color, Font-size, Font-weight */
+						@include btn(98px, 34px, $color-red, .9rem, $white, 700);
+						line-height: 50%;
+						margin-left: .7rem;
+					}
+					.btn-login:hover {
+						opacity: .8;
+					}
+					.btn-join {
+						/* Width, height, bg-color, Font-size, Font-weight */
+						@include btn(98px, 33px, $color-green, .9rem, $white, 700);
+						margin-left: .3rem;
+						line-height: 50%;
+					}
+					.btn-join:hover {
+						opacity: .8;
+					}
+				}
+			}
+		}
+	}
+	&-body {
+		border-top: 4px solid $color-red;
+		background-image: url('../images/image.png');
+		background-repeat: no-repeat;
+		background-color: $color-dark-blue;
+		background-size: auto 100%;
+		background-position: center;
+		background-attachment: scroll;
+		position: relative;
+		height: 305px;
+		&-content {
+			position: absolute;
+			right: 14%;
+			margin-top: 60px;
+			text-align: center;
+			&-paragraph-1 {
+				margin-bottom: 0;
+				font-size: 4rem;
+				text-transform: uppercase;
+				font-weight: 800;
+				letter-spacing: -4px;
+			}
+			&-paragraph-2 {
+				color: $color-dark-gray;
+				font-size: 2rem;
+				font-weight: 800;
+				letter-spacing: -2px;
+				margin: 0;
+			}
+			&-paragraph-3 {
+				font-weight: 800;
+				margin-top: 5px;
+				font-size: 1.6rem;
+				letter-spacing: -1px;
+			}
+		}
+	}
+	&-footer {
+		text-align: center;
+		background-color: $white;
+		&-btn {
+			/* Width, height, background-color, size text, color */
+			@include btn(367px, 72px, $color-green, 2rem, $white, 800);
+			transform: translateY(-50%);
+		}
+
+		&-btn:hover{
+			background-color: #699735;
+		}
+		&-cards {
+			&-group {
+				@include card(350px, 160px);
+				&-img {
+					flex: 0 0 30%;
+					padding-left: 1rem;
+					height: 100%;
+				}
+				&-body {
+					flex: 0 1 70%;
+					overflow: hidden;
+					text-align: right;
+					padding-right: 18px;
+					padding-top: 10px;
+					&-title {
+						span {
+							letter-spacing: -14px;
+							color: inherit;
+						}
+						font-size: 4.8rem;
+						color: $color-very-dark-blue;
+						letter-spacing: -4px;
+						font-weight: 800;
+					}
+					&-text {
+						margin-top: -11px;
+						font-size: 2rem;
+						color: $color-card-p;
+						font-weight: 500;
+						letter-spacing: -2px;
+					}
+					&-span {
+						color: $color-gray;
+						font-size: .9rem;
+						font-weight: 700;
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+	}
+	&-card {
+		background-color: $color-very-light-gray;
+		margin-top: 35px;
+		&-title {
+			padding-top: 1.2rem;
+			@include title($color: blue);
+		}
+		&-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 348px);
+			grid-template-rows: repeat(2, 150px);
+			gap: 31px;
+			margin-top: 20px;
+			padding-bottom: 35px;
+			&-section {
+				@include background-img;
+				&-title {
+					font-size: 2.5rem;
+					font-weight: 700;
+				}
+				&-subtitle {
+					color: $color-light-gray;
+					font-weight: 800;
+					font-size: 1.2rem;
+				}
+				&-btn {
+					@include btn(110px, 34px, $white, .8rem, $color-other-blue, 720);
+				}
+				&-btn:hover {
+					background-color: lightgray;
+				}
+			}
+		}
+	}
+}
