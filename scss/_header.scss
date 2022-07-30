@@ -21,10 +21,26 @@
 		border-bottom: 2px solid lightgray;
 		overflow: hidden;
 		&-container {
-			width: 100%;
 			&-logo {
-				padding: 0;
-				margin: 0;
+				.logo {
+					display: block;
+					color: rgb(219, 217, 217);
+					letter-spacing: -5px;
+					font-size: 1.5rem;
+					font-weight: 800;
+					background-color: rgb(2, 87, 177);
+					border: 2px solid $white;
+					outline: 2.5px solid $color-red;
+					border-radius: 50%;
+					width: 35px;
+					height: 35px;
+				}
+				.logo-title {
+					font-size: 1.7rem;
+					font-weight: 800;
+					letter-spacing: -1px;
+					margin-left: 6px;
+				}
 			}
 			&-social {
 				&-icon {				
@@ -40,7 +56,7 @@
 					display: inline-block;
 					.btn-login {
 						/* Width, height, bg-color, Font-size, Font-weight */
-						@include btn(98px, 34px, $color-red, .9rem, $white, 700);
+						@include btn(90px, 30px, $color-red, .9rem, $white, 700);
 						line-height: 50%;
 						margin-left: .7rem;
 					}
@@ -49,7 +65,7 @@
 					}
 					.btn-join {
 						/* Width, height, bg-color, Font-size, Font-weight */
-						@include btn(98px, 33px, $color-green, .9rem, $white, 700);
+						@include btn(90px, 30px, $color-green, .9rem, $white, 700);
 						margin-left: .3rem;
 						line-height: 50%;
 					}
@@ -72,7 +88,7 @@
 		height: 305px;
 		&-content {
 			position: absolute;
-			right: 14%;
+			right: 10%;
 			margin-top: 60px;
 			text-align: center;
 			&-paragraph-1 {
@@ -92,7 +108,7 @@
 			&-paragraph-3 {
 				font-weight: 800;
 				margin-top: 5px;
-				font-size: 1.6rem;
+				font-size: 1.58rem;
 				letter-spacing: -1px;
 			}
 		}
@@ -102,16 +118,18 @@
 		background-color: $white;
 		&-btn {
 			/* Width, height, background-color, size text, color */
-			@include btn(367px, 72px, $color-green, 2rem, $white, 800);
+			@include btn(347px, 72px, $color-green, 1.8rem, $white, 800);
 			transform: translateY(-50%);
+			box-shadow:
+				0 1px 3px 0 rgb(0, 0, 0 / 0.1),
+				0 1px 2px -1px rgb(0, 0, 0 / 0.1);
 		}
-
 		&-btn:hover{
 			background-color: #699735;
 		}
 		&-cards {
 			&-group {
-				@include card(350px, 160px);
+				@include card(320px, 140px);
 				&-img {
 					flex: 0 0 30%;
 					padding-left: 1rem;
@@ -128,21 +146,21 @@
 							letter-spacing: -14px;
 							color: inherit;
 						}
-						font-size: 4.8rem;
+						font-size: 4rem;
 						color: $color-very-dark-blue;
 						letter-spacing: -4px;
 						font-weight: 800;
 					}
 					&-text {
 						margin-top: -11px;
-						font-size: 2rem;
+						font-size: 1.8rem;
 						color: $color-card-p;
 						font-weight: 500;
 						letter-spacing: -2px;
 					}
 					&-span {
 						color: $color-gray;
-						font-size: .9rem;
+					font-size: .85rem;
 						font-weight: 700;
 						margin-top: 5px;
 					}
@@ -159,24 +177,24 @@
 		}
 		&-grid {
 			display: grid;
-			grid-template-columns: repeat(3, 348px);
-			grid-template-rows: repeat(2, 150px);
+			grid-template-columns: repeat(3, 320px);
+			grid-template-rows: repeat(2, 140px);
 			gap: 31px;
 			margin-top: 20px;
 			padding-bottom: 35px;
 			&-section {
 				@include background-img;
 				&-title {
-					font-size: 2.5rem;
-					font-weight: 700;
+					font-size: 2.2rem;
+					font-weight: 800;
 				}
 				&-subtitle {
 					color: $color-light-gray;
 					font-weight: 800;
-					font-size: 1.2rem;
+					font-size: 1rem;
 				}
 				&-btn {
-					@include btn(110px, 34px, $white, .8rem, $color-other-blue, 720);
+					@include btn(111px, 34px, $white, .8rem, $color-other-blue, 720);
 				}
 				&-btn:hover {
 					background-color: lightgray;
